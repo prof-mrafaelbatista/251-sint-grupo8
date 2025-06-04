@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Tratamento de Exceções{% endblock %}
+
+{% block content %}
+    <h1>Tratamento de Exceções</h1>
+    <p>O tratamento de exceções é um mecanismo em Python para lidar com erros que ocorrem durante a execução de um programa. Em vez de o programa travar, você pode "capturar" o erro e lidar com ele de forma controlada.</p>
+
+    <h2>Conceito</h2>
+    <p>Uma **exceção** é um evento que interrompe o fluxo normal de um programa. O tratamento de exceções envolve o uso de blocos `try`, `except`, `else` e `finally` para gerenciar esses eventos.</p>
+    <ul>
+        <li><strong>`try`</strong>: O bloco de código que pode gerar uma exceção.</li>
+        <li><strong>`except`</strong>: O bloco de código que é executado se uma exceção específica (ou qualquer exceção) ocorrer no bloco `try`.</li>
+        <li><strong>`else`</strong>: Opcional. O código neste bloco é executado se nenhuma exceção ocorrer no bloco `try`.</li>
+        <li><strong>`finally`</strong>: Opcional. O código neste bloco é *sempre* executado, independentemente de uma exceção ter ocorrido ou não. Útil para limpeza de recursos.</li>
+    </ul>
+
+    <h2>Aplicação</h2>
+    <p>Usados para:</p>
+    <ul>
+        <li>Prevenir a falha do programa devido a entradas inválidas do usuário.</li>
+        <li>Lidar com arquivos que não existem ou estão corrompidos.</li>
+        <li>Gerenciar problemas de conexão de rede ou banco de dados.</li>
+        <li>Garantir que recursos (como arquivos abertos) sejam fechados corretamente.</li>
+    </ul>
+
+    <h2>Exemplo de Código</h2>
+    <h3>`try-except` básico</h3>
+    <pre><code class="python">
+try:
+    numero = int(input("Digite um número inteiro: "))
+    resultado = 10 / numero
+    print(f"O resultado é: {resultado}")
+except ValueError:
+    print("Isso não é um número inteiro válido!")
+except ZeroDivisionError:
+    print("Não é possível dividir por zero!")
+except Exception as e: # Captura qualquer outra exceção
+    print(f"Ocorreu um erro inesperado: {e}")
+    </code></pre>
+
+    <h3>`try-except-else-finally`</h3>
+    <pre><code class="python">
+try:
+    with open("arquivo.txt", "r") as f:
+        conteudo = f.read()
+    print("Conteúdo do arquivo:", conteudo)
+except FileNotFoundError:
+    print("Erro: O arquivo 'arquivo.txt' não foi encontrado.")
+except IOError:
+    print("Erro de I/O: Não foi possível ler o arquivo.")
+else:
+    print("Leitura do arquivo bem-sucedida.")
+finally:
+    print("Tentativa de leitura do arquivo concluída.")
+    </code></pre>
+{% endblock %}

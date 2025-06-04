@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Estruturas de Seleção{% endblock %}
+
+{% block content %}
+    <h1>Estruturas de Seleção (Condicionais)</h1>
+    <p>As estruturas de seleção permitem que seu programa tome decisões e execute diferentes blocos de código com base em condições. Em Python, as principais estruturas são `if`, `elif` (else if) e `else`.</p>
+
+    <h2>Conceito</h2>
+    <p>Uma estrutura condicional avalia uma expressão booleana (verdadeira ou falsa). Se a condição for verdadeira, um determinado bloco de código é executado; caso contrário, ele pode ser ignorado ou outro bloco de código pode ser executado.</p>
+
+    <h2>Aplicação</h2>
+    <p>Usadas para:</p>
+    <ul>
+        <li>Verificar a entrada do usuário.</li>
+        <li>Controlar o fluxo de um jogo.</li>
+        <li>Aplicar regras de negócio (ex: descontos baseados no valor da compra).</li>
+        <li>Validar dados.</li>
+    </ul>
+
+    <h2>Exemplo de Código</h2>
+    <pre><code class="python">
+idade = 18
+
+if idade >= 18:
+    print("Você é maior de idade.")
+elif idade >= 13:
+    print("Você é um adolescente.")
+else:
+    print("Você é uma criança.")
+
+# Exemplo com operador lógico
+temperatura = 25
+chuva = False
+
+if temperatura > 30 and not chuva:
+    print("Ótimo dia para ir à praia!")
+elif temperatura > 20 and not chuva:
+    print("Bom dia para um passeio no parque.")
+else:
+    print("Melhor ficar em casa.")
+    </code></pre>
+{% endblock %}

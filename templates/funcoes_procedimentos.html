@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Funções e Procedimentos{% endblock %}
+
+{% block content %}
+    <h1>Funções e Procedimentos</h1>
+    <p>Em programação, funções (e procedimentos, que são funções sem retorno explícito) são blocos de código organizados e reutilizáveis que realizam uma única ação ou um conjunto de ações relacionadas.</p>
+
+    <h2>Conceito</h2>
+    <ul>
+        <li><strong>Função:</strong> Um bloco de código que executa uma tarefa específica e pode retornar um valor. Em Python, todas as funções são definidas usando a palavra-chave `def`.</li>
+        <li><strong>Procedimento:</strong> Embora Python não tenha uma palavra-chave separada para "procedimento", o termo geralmente se refere a uma função que executa uma ação mas não retorna explicitamente um valor (ou retorna `None` por padrão).</li>
+    </ul>
+
+    <h2>Aplicação</h2>
+    <p>Usados para:</p>
+    <ul>
+        <li>**Reutilização de Código:** Evitar repetição de código (Princípio DRY - Don't Repeat Yourself).</li>
+        <li>**Modularização:** Dividir um programa grande em partes menores e mais gerenciáveis.</li>
+        <li>**Legibilidade:** Tornar o código mais fácil de entender e manter.</li>
+        <li>**Abstração:** Esconder a complexidade interna de uma operação.</li>
+    </ul>
+
+    <h2>Exemplo de Código</h2>
+    <h3>Função Simples</h3>
+    <pre><code class="python">
+def saudacao(nome):
+    """Esta função retorna uma saudação personalizada."""
+    return f"Olá, {nome}!"
+
+# Chamando a função
+mensagem = saudacao("Alice")
+print(mensagem) # Saída: Olá, Alice!
+
+print(saudacao("Bob")) # Saída: Olá, Bob!
+    </code></pre>
+
+    <h3>Função com Múltiplos Parâmetros e Valores Padrão</h3>
+    <pre><code class="python">
+def calcular_area_retangulo(base, altura):
+    """Calcula a área de um retângulo."""
+    return base * altura
+
+def soma_numeros(a, b=0): # b tem um valor padrão de 0
+    """Soma dois números. Se b não for fornecido, assume 0."""
+    return a + b
+
+print(calcular_area_retangulo(5, 3)) # Saída: 15
+print(soma_numeros(10))        # Saída: 10 (10 + 0)
+print(soma_numeros(10, 5))     # Saída: 15
+    </code></pre>
+
+    <h3>Função que não retorna explicitamente (Comportamento de Procedimento)</h3>
+    <pre><code class="python">
+def imprimir_mensagem(mensagem):
+    """Imprime uma mensagem na tela."""
+    print(mensagem)
+
+imprimir_mensagem("Bem-vindo ao mundo das funções!")
+    </code></pre>
+{% endblock %}

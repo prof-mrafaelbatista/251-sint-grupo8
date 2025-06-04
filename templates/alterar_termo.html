@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Alterar Termo no Dicionário{% endblock %}
+
+{% block content %}
+    <h1>Alterar Termo Existente</h1>
+    <p>Selecione um termo do dicionário para alterar sua definição ou até mesmo seu nome.</p>
+
+    <form action="{{ url_for('alterar_termo') }}" method="POST" class="form-container">
+        <label for="termo_original">Selecionar Termo:</label>
+        <select id="termo_original" name="termo_original" required onchange="this.form.submit()">
+            <option value="">-- Selecione um termo --</option>
+            {% for termo_val in termos_existentes %}
+                <option value="{{ termo_val }}" {% if termo_val == termo_selecionado %}selected{% endif %}>{{ termo_val }}</option>
+            {% endfor %}
+        </select>
+
+        {% if termo_selecionado %}
+            <label for="novo_termo">Novo Termo (opcional, deixe vazio para manter o mesmo):</label>
+            <input type="text" id="novo_termo" name="novo_termo" value="{{ termo_selecionado }}" placeholder="Deixe vazio para manter o termo original">
+
+            <label for="nova_definicao">Nova Definição:</label>
+            <textarea id="nova_definicao" name="nova_definicao" rows="6" required>{{ definicao_existente }}</textarea>
+
+            <button type="submit">Salvar Alterações</button>
+        {% else %}
+            <p>Selecione um termo para carregar sua definição e realizar a alteração.</p>
+        {% endif %}
+        <a href="{{ url_for('dicionario') }}" class="button button-secondary">Voltar ao Dicionário</a>
+    </form>
+{% endblock %}

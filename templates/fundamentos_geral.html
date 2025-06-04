@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Fundamentos de Python{% endblock %}
+
+{% block content %}
+    <h1>Fundamentos da Programação em Python</h1>
+    <p>Explore os principais conceitos da programação em Python através das seções abaixo:</p>
+    <div class="fundamentos-sections">
+        <div class="fundamentos-card">
+            <h3><a href="{{ url_for('fundamentos_tema', tema='selecao') }}">Estruturas de Seleção</a></h3>
+            <p>Aprenda a controlar o fluxo de execução do seu código com `if`, `elif` e `else`.</p>
+        </div>
+        <div class="fundamentos-card">
+            <h3><a href="{{ url_for('fundamentos_tema', tema='repeticao') }}">Estruturas de Repetição</a></h3>
+            <p>Descubra como executar blocos de código repetidamente usando `for` e `while`.</p>
+        </div>
+        <div class="fundamentos-card">
+            <h3><a href="{{ url_for('fundamentos_tema', tema='vetores_matrizes') }}">Vetores e Matrizes</a></h3>
+            <p>Entenda como trabalhar com coleções de dados, como listas e listas aninhadas em Python.</p>
+        </div>
+        <div class="fundamentos-card">
+            <h3><a href="{{ url_for('fundamentos_tema', tema='funcoes_procedimentos') }}">Funções e Procedimentos</a></h3>
+            <p>Organize seu código em blocos reutilizáveis para tornar programas mais eficientes e legíveis.</p>
+        </div>
+        <div class="fundamentos-card">
+            <h3><a href="{{ url_for('fundamentos_tema', tema='tratamento_excecao') }}">Tratamento de Exceções</a></h3>
+            <p>Saiba como lidar com erros e exceções em seus programas Python para torná-los mais robustos.</p>
+        </div>
+    </div>
+{% endblock %}

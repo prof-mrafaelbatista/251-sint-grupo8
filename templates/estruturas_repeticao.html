@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Estruturas de Repetição{% endblock %}
+
+{% block content %}
+    <h1>Estruturas de Repetição (Laços)</h1>
+    <p>As estruturas de repetição permitem que você execute um bloco de código várias vezes. As principais estruturas de repetição em Python são `for` e `while`.</p>
+
+    <h2>Conceito</h2>
+    <p>Um laço de repetição executa um conjunto de instruções repetidamente até que uma determinada condição seja satisfeita (laço `while`) ou para cada item em uma sequência (laço `for`).</p>
+
+    <h2>Aplicação</h2>
+    <p>Usadas para:</p>
+    <ul>
+        <li>Iterar sobre listas, strings, tuplas, dicionários.</li>
+        <li>Processar grandes volumes de dados.</li>
+        <li>Criar menus que se repetem até o usuário sair.</li>
+        <li>Realizar cálculos iterativos.</li>
+    </ul>
+
+    <h2>Exemplo de Código</h2>
+    <h3>Laço `for`</h3>
+    <pre><code class="python">
+# Iterando sobre uma lista
+frutas = ["maçã", "banana", "cereja"]
+for fruta in frutas:
+    print(fruta)
+
+# Iterando sobre um range de números
+for i in range(5): # i de 0 a 4
+    print(i)
+
+# Iterando com índice e valor (enumerate)
+for indice, fruta in enumerate(frutas):
+    print(f"Índice {indice}: {fruta}")
+    </code></pre>
+
+    <h3>Laço `while`</h3>
+    <pre><code class="python">
+contador = 0
+while contador < 5:
+    print(contador)
+    contador += 1 # Incrementa o contador para evitar laço infinito
+
+# Exemplo com break e continue
+numero = 0
+while True: # Laço infinito até que um 'break' seja encontrado
+    numero += 1
+    if numero % 2 == 0:
+        continue # Pula para a próxima iteração se o número for par
+    if numero > 10:
+        break # Sai do laço se o número for maior que 10
+    print(f"Número ímpar: {numero}")
+    </code></pre>
+{% endblock %}

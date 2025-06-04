@@ -1,0 +1,28 @@
+projeto_flask_python/
+├── venv/                      # Ambiente virtual (ignorar em controle de versão)
+├── app.py                     # Arquivo principal da aplicação Flask, contendo rotas e lógica
+├── config.py                  # Configurações da API Gemini e outras variáveis de ambiente
+├── .env                       # Variáveis de ambiente (sua API Key do Gemini - NUNCA ENVIAR PARA REPOSITÓRIO PÚBLICO)
+├── README.md                  # Documentação do projeto
+├── templates/                 # Arquivos HTML (Jinja2)
+│   ├── base.html              # Template base para herança de layout
+│   ├── index.html             # Página inicial
+│   ├── sobre.html             # Página sobre a equipe
+│   ├── fundamentos_geral.html # Página principal para os fundamentos de Python
+│   ├── estruturas_selecao.html
+│   ├── estruturas_repeticao.html
+│   ├── vetores_matrizes.html
+│   ├── funcoes_procedimentos.html
+│   ├── tratamento_excecao.html
+│   ├── duvidas.html           # Página de perguntas e respostas com Gemini
+│   ├── dicionario.html        # Página de visualização do dicionário
+│   ├── adicionar_termo.html   # Formulário para adicionar termos
+│   ├── alterar_termo.html     # Formulário para alterar termos
+│   └── deletar_termo.html     # Formulário/ação para deletar termos
+├── static/                    # Arquivos estáticos (CSS, JS, imagens)
+│   ├── css/
+│   │   └── style.css          # Estilos CSS globais
+│   └── js/
+│       └── script.js          # Scripts JavaScript (se necessários)
+└── data/                      # Onde o arquivo do dicionário será armazenado
+    └── termos.txt             # Arquivo de texto para persistência do dicionário

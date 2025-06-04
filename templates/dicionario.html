@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Dicionário de Termos{% endblock %}
+
+{% block content %}
+    <h1>Dicionário de Termos de Programação</h1>
+    <p>Aqui você pode visualizar, adicionar, alterar e deletar termos de programação.</p>
+
+    <div class="dictionary-actions">
+        <a href="{{ url_for('adicionar_termo') }}" class="button">Adicionar Novo Termo</a>
+        <a href="{{ url_for('alterar_termo') }}" class="button">Alterar Termo Existente</a>
+        <a href="{{ url_for('deletar_termo') }}" class="button button-delete">Deletar Termo</a>
+    </div>
+
+    {% if termos %}
+        <ul class="term-list">
+            {% for item in termos %}
+                <li class="term-item">
+                    <strong class="term-name">{{ item.termo }}</strong>: <span class="term-definition">{{ item.definicao }}</span>
+                    <div class="term-actions">
+                        <a href="{{ url_for('alterar_termo', termo=item.termo) }}" class="action-link">Alterar</a>
+                        <form action="{{ url_for('deletar_termo') }}" method="POST" style="display:inline;">
+                            <input type="hidden" name="termo_a_deletar" value="{{ item.termo }}">
+                            <button type="submit" class="action-link delete-button">Deletar</button>
+                        </form>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>O dicionário está vazio. <a href="{{ url_for('adicionar_termo') }}">Adicione o primeiro termo!</a></p>
+    {% endif %}
+{% endblock %}

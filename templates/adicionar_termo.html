@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Adicionar Termo ao Dicionário{% endblock %}
+
+{% block content %}
+    <h1>Adicionar Novo Termo</h1>
+    <p>Preencha os campos abaixo para adicionar um novo termo e sua definição ao dicionário.</p>
+
+    <form action="{{ url_for('adicionar_termo') }}" method="POST" class="form-container">
+        <label for="termo">Termo:</label>
+        <input type="text" id="termo" name="termo" required autofocus>
+
+        <label for="definicao">Definição:</label>
+        <textarea id="definicao" name="definicao" rows="6" required></textarea>
+
+        <button type="submit">Adicionar Termo</button>
+        <a href="{{ url_for('dicionario') }}" class="button button-secondary">Voltar ao Dicionário</a>
+    </form>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title %}Vetores e Matrizes{% endblock %}
+
+{% block content %}
+    <h1>Vetores e Matrizes (Listas e Listas Aninhadas)</h1>
+    <p>Em Python, o conceito de vetores e matrizes é geralmente implementado usando **listas** e **listas aninhadas** (listas dentro de listas).</p>
+
+    <h2>Conceito</h2>
+    <ul>
+        <li><strong>Vetor (Lista):</strong> Uma coleção ordenada e mutável de itens. Pode conter itens de diferentes tipos de dados. É uma estrutura de dados linear.</li>
+        <li><strong>Matriz (Lista Aninhada):</strong> Uma lista onde cada elemento é, por si só, outra lista. Isso cria uma estrutura bidimensional (ou multidimensional) que se assemelha a uma tabela ou grade.</li>
+    </ul>
+
+    <h2>Aplicação</h2>
+    <p>Usados para:</p>
+    <ul>
+        <li>Armazenar coleções de dados (ex: nomes de alunos, temperaturas diárias).</li>
+        <li>Representar tabelas de dados ou grades (ex: tabuleiro de jogo, planilhas).</li>
+        <li>Manipular conjuntos de elementos de forma eficiente.</li>
+        <li>Implementar pilhas, filas e outras estruturas de dados mais complexas.</li>
+    </ul>
+
+    <h2>Exemplo de Código</h2>
+    <h3>Vetores (Listas)</h3>
+    <pre><code class="python">
+# Criando uma lista
+numeros = [1, 2, 3, 4, 5]
+frutas = ["maçã", "banana", "cereja"]
+
+# Acessando elementos
+print(numeros[0])    # Saída: 1 (primeiro elemento, índice 0)
+print(frutas[1])     # Saída: banana
+
+# Modificando elementos
+numeros[2] = 10
+print(numeros)       # Saída: [1, 2, 10, 4, 5]
+
+# Adicionando elementos
+frutas.append("laranja") # Adiciona ao final
+print(frutas)            # Saída: ['maçã', 'banana', 'cereja', 'laranja']
+
+# Removendo elementos
+frutas.remove("banana")
+print(frutas)            # Saída: ['maçã', 'cereja', 'laranja']
+
+# Tamanho da lista
+print(len(numeros))  # Saída: 5
+    </code></pre>
+
+    <h3>Matrizes (Listas Aninhadas)</h3>
+    <pre><code class="python">
+# Criando uma matriz 3x3
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Acessando elementos (linha, coluna)
+print(matriz[0][0])  # Saída: 1
+print(matriz[1][2])  # Saída: 6
+
+# Iterando sobre uma matriz
+for linha in matriz:
+    for elemento in linha:
+        print(elemento, end=' ')
+    print() # Nova linha após cada linha da matriz
+
+# Saída da iteração:
+# 1 2 3
+# 4 5 6
+# 7 8 9
+    </code></pre>
+{% endblock %}
+

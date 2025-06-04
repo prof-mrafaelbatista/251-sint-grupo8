@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Sobre a Equipe{% endblock %}
+
+{% block content %}
+    <h1>Nossa Equipe</h1>
+    <p>Conheça as pessoas dedicadas que desenvolveram este projeto:</p>
+    <div class="team-members">
+        {% for membro in equipe %}
+            <div class="member-card">
+                <h2>{{ membro.nome }}</h2>
+                {% if membro.imagem %}
+                    <img src="{{ url_for('static', filename=membro.imagem) }}" alt="{{ membro.nome }}"
+                         style="width: 100px; height: 100px; object-fit: cover; border-radius: 50%; border: 3px solid #ccc; margin-bottom: 10px;">
+                {% endif %}
+                {% if membro.rede_social %}
+                    <p><a href="{{ membro.rede_social }}" target="_blank" rel="noopener noreferrer">Perfil Profissional</a></p>
+                {% endif %}
+                {% if membro.descricao %}
+                    <p>{{ membro.descricao }}</p>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

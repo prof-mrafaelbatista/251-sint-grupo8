@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Tirar Dúvidas com Gemini{% endblock %}
+
+{% block content %}
+    <h1>Tirar Dúvidas com o Gemini</h1>
+    <p>Utilize a inteligência artificial do Google Gemini para obter respostas sobre os fundamentos de programação em Python.</p>
+
+    <form action="{{ url_for('duvidas') }}" method="POST" class="form-container">
+        <label for="pergunta">Sua Pergunta sobre Python:</label>
+        <textarea id="pergunta" name="pergunta" rows="6" placeholder="Ex: O que é uma tupla em Python? Como funciona o 'for' loop?" required>{{ pergunta if pergunta }}</textarea>
+        <button type="submit">Perguntar ao Gemini</button>
+    </form>
+
+    {% if resposta %}
+        <div class="resposta-gemini">
+            <h2>Resposta do Gemini:</h2>
+            <p>{{ resposta | safe }}</p> {# Usar 'safe' se a resposta puder conter HTML formatado #}
+        </div>
+    {% endif %}
+{% endblock %}

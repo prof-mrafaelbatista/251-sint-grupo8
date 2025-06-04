@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Página Inicial - Fundamentos de Python{% endblock %}
+
+{% block content %}
+    <h1>Bem-vindo ao Site de Fundamentos de Programação em Python!</h1>
+    <p>Este site é um recurso completo para aprender os conceitos essenciais da programação em Python, com exemplos práticos e uma interface interativa.</p>
+    <p>Aqui você poderá explorar:</p>
+    <div class="home-sections">
+        <div class="section-card">
+            <h2><a href="{{ url_for('fundamentos_geral') }}">Fundamentos de Python</a></h2>
+            <p>Aprenda sobre estruturas de controle, tipos de dados, funções e tratamento de exceções com exemplos claros e didáticos.</p>
+        </div>
+        <div class="section-card">
+            <h2><a href="{{ url_for('duvidas') }}">Tire Suas Dúvidas com o Gemini</a></h2>
+            <p>Use nossa inteligência artificial para obter respostas rápidas e precisas para suas perguntas sobre Python.</p>
+        </div>
+        <div class="section-card">
+            <h2><a href="{{ url_for('dicionario') }}">Dicionário Interativo de Termos</a></h2>
+            <p>Consulte, adicione, altere e delete termos de programação para expandir seu vocabulário técnico.</p>
+        </div>
+        <div class="section-card">
+            <h2><a href="{{ url_for('sobre') }}">Sobre a Equipe</a></h2>
+            <p>Conheça os desenvolvedores por trás deste projeto.</p>
+        </div>
+    </div>
+    <p>Comece a explorar clicando nos links acima ou no menu de navegação!</p>
+{% endblock %}

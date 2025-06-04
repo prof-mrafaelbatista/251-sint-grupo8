@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Deletar Termo do Dicionário{% endblock %}
+
+{% block content %}
+    <h1>Deletar Termo</h1>
+    <p>Selecione o termo que você deseja remover permanentemente do dicionário.</p>
+
+    <form action="{{ url_for('deletar_termo') }}" method="POST" class="form-container">
+        <label for="termo_a_deletar">Selecione o Termo a Deletar:</label>
+        <select id="termo_a_deletar" name="termo_a_deletar" required>
+            <option value="">-- Selecione um termo --</option>
+            {% for termo_val in termos_existentes %}
+                <option value="{{ termo_val }}">{{ termo_val }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" class="button button-delete" onclick="return confirm('Tem certeza que deseja deletar este termo? Esta ação é irreversível.');">Deletar Termo</button>
+        <a href="{{ url_for('dicionario') }}" class="button button-secondary">Voltar ao Dicionário</a>
+    </form>
+{% endblock %}
